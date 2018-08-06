@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://www.baimaiprachan.com/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Prompt" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://www.baimaiprachan.com/css/landing-page.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+          $('#indivDishModal').on("show.bs.modal", function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var name = button.data('id')
+            var imgurl = name+".jpg"
+            var modal = $(this)
+
+            modal.find('.modal-title').text(name)
+            modal.find('.modal-body input').val(name)
+            modal.find('.modal-body .foodimg').attr('src', "img/indiv/"+imgurl);
+
+            $.get("text/"+name+".txt", function(data) {
+              modal.find('.modal-body .desc').text(data)
+            }, 'text');
+
+          });
+          $("#indivDishModal").on("hidden.bs.modal", function(){
+              $(".desc").text("");
+          });
+        });
+    </script>
+
+  </head>
+
+  <body>
+    <section id="catering-buffet" class="content-section-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mr-auto order-lg-2">
+            <h2 class="section-heading">จัดเลี้ยงบุฟเฟต์นอกสถานที่</h2>
+            <hr class="section-heading-spacer">
+            <div class="clearfix">
+            </div>
+            <p class="lead">
+              <table style="width:100%">
+               <tr>
+                 <th>จำนวนแขก</th>
+                 <th>ราคาเริ่มต้น</th>
+                 <th>อาหารคาว</th>
+                 <th>ของหวาน</th>
+               </tr>
+               <tr>
+                 <td>30-49 ท่าน</td>
+                 <td>200 บ./ท่าน</td>
+                 <td>5 อย่าง</td>
+                 <td>1-2 อย่าง</td>
+               </tr>
+               <tr>
+                 <td>50 ท่านขึ้นไป</td>
+                 <td>180 บ./ท่าน</td>
+                 <td>5 อย่าง</td>
+                 <td>1-2 อย่าง</td>
+               </tr>
+              </table>
+            </p>
+            <p class="lead">
+            </p>
+            <p class="lead">
+              รวมข้าวสวย ขนมจีน(สำหรับแกงเผ็ด) น้ำเปล่า น้ำแข็ง ภาชนะอุ่นอาหาร จาน ชาม ช้อนส้อม แก้วน้ำ โต๊ะบุฟเฟต์
+              พนักงานบริการ
+            </p>
+            <p class="lead">
+              และมีโต๊ะเก้าอี้แขกให้เช่า (150 บาท/ชุด รวมโต๊ะ 1 ตัว เก้าอี้ 10 ตัว และผ้าตลุมโต๊ะ)
+              หากต้องการใช้บริการ กรุณาแจ้งทางร้านล่วงหน้า
+            </p>
+            <p class="lead"><a target="_blank" href="documents/รายการอาหารจัดเลี้ยง_ใบไม้พระจันทร์.pdf">ดาวโหลดเมนูได้ที่นี่</a></p>
+          </div>
+          <div class="col-lg-5 ml-auto order-lg-1">
+            <img class="img-fluid" src="img/buffet_tables.jpg" alt="buffet tables">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample-menus" class="content-section-a">
+      <div class="container">
+        <ul class="nav nav-tabs justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#menu1">
+              <h4 class="section-heading">รายการตัวอย่าง 1</h4>
+              <p class="lead" style="line-height: 0px;">(180 บ.ต่อท่าน - 50 ท่าน)<br></p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">
+              <h4 class="section-heading">รายการตัวอย่าง 2</h4>
+              <p class="lead" style="line-height: 0px;">(200 บ.ต่อท่าน - 50 ท่าน)<br></p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu3">
+              <h4 class="section-heading">รายการตัวอย่าง 3</h4>
+              <p class="lead" style="line-height: 0px;">(225 บ.ต่อท่าน - 50 ท่าน)<br></p>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane container active" id="menu1">
+            <div class="row">
+              <div class="col-lg-5">
+                <p class="lead">
+                  <u>อาหารคาว</u><br>
+                  1.	แกงรัญจวน<br>
+                  2.	ยำโน่นนิดนี่หน่อย<br>
+                  3.	กุ้งพันอ้อย<br>
+                  4.	ไก่กรอบมะนาว<br>
+                  5.	เมี่ยงกลีบบัว<br>
+                  ข้าวสวย<br>
+                  <br>
+                  <u>ของหวาน</u><br>
+                  1.	ขนมเหนียว<br>
+                  2.	เค้กชอคโกแล็ตหน้านิ่ม<br>
+                  <br>
+                  ภาชนะอุ่นอาหาร<br>
+                  จาน ชาม ช้อนส้อม<br>
+                  น้ำเปล่า น้ำแข็ง แก้วน้ำ<br>
+                  โต๊ะบุฟเฟต์<br>
+                  พนักงานบริการ<br>
+                  บริการจัดตั้ง เก็บของ
+                </p>
+              </div>
+              <div class="col-lg-5">
+                <div class="row">
+                  <div class="col" style="padding: 0px">
+                    <span data-toggle="modal" data-target="#indivDishModal" data-id="เมี่ยงกลีบบัว">
+                      <img class="img-fluid" src="img/indiv/เมี่ยงกลีบบัว.jpg" alt="เมี่ยงกลีบบัว" style="padding: 5px">
+                    </span>
+                    <span data-toggle="modal" data-target="#indivDishModal" data-id="แกงรัญจวน">
+                      <img class="img-fluid" src="img/indiv/แกงรัญจวน.jpg" alt="แกงรัญจวน" style="padding: 5px">
+                    </span>
+                  </div>
+                  <div class="col" style="padding: 0px">
+                    <span data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งพันอ้อย">
+                      <img class="img-fluid" src="img/indiv/กุ้งพันอ้อย.jpg" alt="กุ้งพันอ้อย" style="padding: 5px">
+                    </span>
+                    <span data-toggle="modal" data-target="#indivDishModal" data-id="ไก่กรอบมะนาว">
+                      <img class="img-fluid" src="img/indiv/ไก่กรอบมะนาว.jpg" alt="ไก่กรอบมะนาว" style="padding: 5px">
+                    </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col" style="padding: 0px">
+                    <span data-toggle="modal" data-target="#indivDishModal" data-id="ขนมเหนียว">
+                      <img class="img-fluid" src="img/indiv/ขนมเหนียว.jpg" alt="ขนมเหนียว" style="padding: 5px">
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane container fade" id="menu2">
+            <h2 class="section-heading">รายการ 2</h2>
+            <p class="lead" style="line-height: 0px;">(180 บ.ต่อท่าน - 50 ท่าน)<br></p>
+            <!--hr class="section-heading-spacer-r"-->
+            <div class="clearfix"></div>
+          </div>
+          <div class="tab-pane container fade" id="menu3">
+            <h2 class="section-heading">รายการ 3</h2>
+            <p class="lead" style="line-height: 0px;">(180 บ.ต่อท่าน - 50 ท่าน)<br></p>
+            <!--hr class="section-heading-spacer-r"-->
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mains" class="content-section-b">
+      <div class="container">
+        <a target="_blank" href="documents/รายการอาหารจัดเลี้ยง_ใบไม้พระจันทร์.pdf"><p class="menulink">ดาวโหลดเมนู</p></a>
+        <div class="col-lg-12 ml-auto"  align="center">
+          <h2 class="section-heading">รายการแนะนำ - อาหารคาว</h2>
+          <hr class="section-heading-spacer-c" style="width: 300px;">
+          <p class="lead">เลือกอาหารคาว 1 อย่างต่อรายการ จากทั้งหมด 5 รายการ</p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ml-auto">
+            <h3 align="center">รายการ 1<br>ประเภทแกง</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  <strong>แกงเผ็ด</strong><br>
+                  แกงเขียวหวานไก่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เขียวหวานลูกชิ้นปลากราย">
+                    <a data-toggle="tooltip" data-placement="top" title="กดดูภาพ">เขียวหวานลูกชิ้นปลากราย</a></span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เขียวหวานลูกชิ้นปลากราย"
+                    src="img/indiv/เขียวหวานลูกชิ้นปลากราย.jpg" alt="เขียวหวานลูกชิ้นปลากราย ใบไม้พระจันทร์"><br>
+                  แกงเขียวหวานหมูย่าง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเผ็ดไก่">แกงเผ็ดไก่</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเผ็ดไก่"
+                    src="img/indiv/แกงเผ็ดไก่.jpg" alt="แกงเผ็ดไก่ ใบไม้พระจันทร์"><br>
+                  แกงกะหรี่ไก่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงมัสมั่นไก่">แกงมัสมั่นไก่</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงมัสมั่นไก่"
+                    src="img/indiv/แกงมัสมั่นไก่.jpg" alt="แกงมัสมั่นไก่ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงรัญจวน">แกงรัญจวน</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงรัญจวน"
+                    src="img/indiv/แกงรัญจวน.jpg" alt="แกงรัญจวน ใบไม้พระจันทร์"><br>
+                  แกงบุ่มไบ่<br>
+                  แกงต้มจิ๋วไก่<br>
+                  แกงไก่พิโรธ<br>
+                  แกงหมูเทโพ<br>
+                  แกงส้มผักรวมกุ้ง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงส้มชะอมกุ้ง">แกงส้มชะอมกุ้ง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงส้มชะอมกุ้ง"
+                    src="img/indiv/แกงส้มชะอมกุ้ง.jpg" alt="แกงส้มชะอมกุ้ง ใบไม้พระจันทร์"><br>
+                  แกงส้มมะละกอกุ้ง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มแซบซี่โครงหมู">ต้มแซบซี่โครงหมู</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มแซบซี่โครงหมู"
+                    src="img/indiv/ต้มแซบซี่โครงหมู.jpg" alt="ต้มแซบซี่โครงหมู ใบไม้พระจันทร์"><br>
+                  ต้มยำไก่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="โป๊ะแตก">โป๊ะแตก</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="โป๊ะแตก"
+                    src="img/indiv/โป๊ะแตก.jpg" alt="โป๊ะแตก ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ฉู่ฉี่ปลา">ฉู่ฉี่ปลา</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ฉู่ฉี่ปลา"
+                    src="img/indiv/ฉู่ฉี่ปลา.jpg" alt="ฉู่ฉี่ปลา ใบไม้พระจันทร์"><br>
+                  พะแนงหมู<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ระแวงเนื้อ">ระแวงเนื้อ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ระแวงเนื้อ"
+                    src="img/indiv/ระแวงเนื้อ.jpg" alt="ระแวงเนื้อ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มข่าไก่">ต้มข่าไก่</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มข่าไก่"
+                    src="img/indiv/ต้มข่าไก่.jpg" alt="ต้มข่าไก่ ใบไม้พระจันทร์"><br>
+                </p>
+                </div>
+                <div class="col">
+                <p class="lead" align="left">
+                  <strong>เเกงจืด</strong><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เกาเหลาหมูตุ๋น">เกาเหลาหมูตุ๋น</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เกาเหลาหมูตุ๋น"
+                    src="img/indiv/เกาเหลาหมูตุ๋น.jpg" alt="เกาเหลาหมูตุ๋น ใบไม้พระจันทร์"><br>
+                  แกงจืดกะหล่ำปลียัดไส้<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงจืดขุนนาง">แกงจืดขุนนาง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงจืดขุนนาง"
+                    src="img/indiv/แกงจืดขุนนาง.jpg" alt="แกงจืดขุนนาง ใบไม้พระจันทร์"><br>
+                  แกงเลียงนพเก้า<br>
+                  แกงจืดเต้าหู้<br>
+                  แกงจืดลูกรอก<br>
+                  แกงจืดตำลึง<br>
+                  แกงจืดมะระยัดไส้<br>
+                  แกงจืดหมูสับน้ำเต้า<br>
+                  แกงจืดปีกไก่ตุ๋นรากบัว<br>
+                  ซี่โครงหมูตุ๋นอ้อย<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่ตุ๋นลำใย">ไก่ตุ๋นลำใย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่ตุ๋นลำใย"
+                    src="img/indiv/ไก่ตุ๋นลำใย.jpg" alt="ไก่ตุ๋นลำใย ใบไม้พระจันทร์"><br>
+                  ไก่ตุ๋นมะระ<br>
+                  ไก่ตุ๋นมะนาวดอง<br>
+                  เกี้ยมอี๋น้ำ<br>
+                  ไข่พะโล้<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงจับฉ่าย">แกงจับฉ่าย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงจับฉ่าย"
+                    src="img/indiv/แกงจับฉ่าย.jpg" alt="แกงจับฉ่าย ใบไม้พระจันทร์"><br>
+                  ซุปมักกะโรนี<br>
+                  ซี่โครงหมูตุ๋นยาจีน<br>
+                  ซุปน่องไก่มันฝรั่ง<br>
+                  ซุปข้าวโพด
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <h3 align="center">รายการ 2<br>ประเภทยำ</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  <br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ยำไก่ย่าง">ยำไก่ย่าง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ยำไก่ย่าง"
+                    src="img/indiv/ยำไก่ย่าง.jpg" alt="ยำไก่ย่าง ใบไม้พระจันทร์"><br>
+                  ยำคะน้ากุ้ง<br>
+                  ยำเซี่ยงไฮ้<br>
+                  ยำทะเล<br>
+                  ยำเนื้อย่าง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ยำโน่นนิดนี่หน่อย">ยำโน่นนิดนี่หน่อย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ยำโน่นนิดนี่หน่อย"
+                    src="img/indiv/ยำโน่นนิดนี่หน่อย.jpg" alt="ยำโน่นนิดนี่หน่อย ใบไม้พระจันทร์"><br>
+                  ยำผลไม้<br>
+                  ยำผักบุ้งทอด<br>
+                  ยำมะเขือยาว<br>
+                  ยำมะม่วง<br>
+                  ยำริมรั้ว<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ยำวุ้นเส้น">ยำวุ้นเส้น</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ยำวุ้นเส้น"
+                    src="img/indiv/ยำวุ้นเส้น.jpg" alt="ยำวุ้นเส้น ใบไม้พระจันทร์"><br>
+                  ยำส้มโอ<br>
+                  ยำสารผัดเห็ด<br>
+                  ยำเห็ดรวมมิตร<br>
+                  ยำหมูยอ<br>
+                  ยำหมูย่าง
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead" align="left">
+                  <br>
+                  ก๋วยเตี๋ยวลุยสวน<br>
+                  ไข่เจียวลาบกุ้งสับ<br>
+                  น้ำตกหมู<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ลาบไก่">ลาบไก่</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ลาบไก่"
+                    src="img/indiv/ลาบไก่.jpg" alt="ลาบไก่ ใบไม้พระจันทร์"><br>
+                  ลาบทอด<br>
+                  ลาบเป็ดสับ<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ลาบหมู">ลาบหมู</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ลาบหมู"
+                    src="img/indiv/ลาบหมู.jpg" alt="ลาบหมู ใบไม้พระจันทร์"><br>
+                  ส้มตำนพเก้า<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="หลนสองสหาย">หลนสองสหาย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="หลนสองสหาย"
+                    src="img/indiv/หลนสองสหาย.jpg" alt="หลนสองสหาย ใบไม้พระจันทร์"><br>
+                  หมูนึ่งมะนาว<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกกะปิ">น้ำพริกกะปิ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกกะปิ"
+                    src="img/indiv/น้ำพริกกะปิ.jpg" alt="น้ำพริกกะปิ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกลงเรือ">น้ำพริกลงเรือ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกลงเรือ"
+                    src="img/indiv/น้ำพริกลงเรือ.jpg" alt="น้ำพริกลงเรือ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกกุ้งสด">น้ำพริกกุ้งสด</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="น้ำพริกกุ้งสด"
+                    src="img/indiv/น้ำพริกกุ้งสด.jpg" alt="น้ำพริกกุ้งสด ใบไม้พระจันทร์"><br>
+                  ผักกาดขาวสอดไส้นึ่งมะนาว
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ml-auto">
+            <h3 align="center">รายการ 3</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  ก๋วยเตี๋ยวคั่วไก่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ก๋วยเตี๋ยวราดหน้าหมู">ก๋วยเตี๋ยวราดหน้าหมู</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ก๋วยเตี๋ยวราดหน้าหมู"
+                    src="img/indiv/ก๋วยเตี๋ยวราดหน้าหมู.jpg" alt="ก๋วยเตี๋ยวราดหน้าหมู ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งพันอ้อย">กุ้งพันอ้อย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งพันอ้อย"
+                    src="img/indiv/กุ้งพันอ้อย.jpg" alt="กุ้งพันอ้อย ใบไม้พระจันทร์"><br>
+                  ไก่ย่างตะไคร้<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมจีน-น้ำยา">ขนมจีน-น้ำยา</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมจีน-น้ำยา"
+                    src="img/indiv/ขนมจีน-น้ำยา.jpg" alt="ขนมจีน-น้ำยา ใบไม้พระจันทร์"><br>
+                  ไก่ผัดพริกแกงพริกไทยอ่อน<br>
+                  ขนมจีนน้ำพริก<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวซอย">ข้าวซอย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวซอย"
+                    src="img/indiv/ข้าวซอย.jpg" alt="ข้าวซอย ใบไม้พระจันทร์"><br>
+                  ข้าวผัดกุ้ง<br>
+                  ข้าวผัดเทวดา<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดปู">ข้าวผัดปู</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดปู"
+                    src="img/indiv/ข้าวผัดปู.jpg" alt="ข้าวผัดปู ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดโป๊ะแตก">ข้าวผัดโป๊ะแตก</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดโป๊ะแตก"
+                    src="img/indiv/ข้าวผัดโป๊ะแตก.jpg" alt="ข้าวผัดโป๊ะแตก ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดสมุนไพร-ปลาสลิด">ข้าวผัดสมุนไพร-ปลาสลิด</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวผัดสมุนไพร-ปลาสลิด"
+                    src="img/indiv/ข้าวผัดสมุนไพร-ปลาสลิด.jpg" alt="ข้าวผัดสมุนไพร-ปลาสลิด ใบไม้พระจันทร์"><br>
+                  ข้าวผัดหมูย่าง<br>
+                </p>
+                </div>
+                <div class="col">
+                <p class="lead" align="left">
+                  ข้าวมัน(กะทิ)-ส้มตำ<br>
+                  ข้าวหน้าไก่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ไข่ตุ๋นญี่ปุ่น">ไข่ตุ๋นญี่ปุ่น</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ไข่ตุ๋นญี่ปุ่น"
+                    src="img/indiv/ไข่ตุ๋นญี่ปุ่น.jpg" alt="ไข่ตุ๋นญี่ปุ่น ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ไข่ลูกเขย">ไข่ลูกเขย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ไข่ลูกเขย"
+                    src="img/indiv/ไข่ลูกเขย.jpg" alt="ไข่ลูกเขย ใบไม้พระจันทร์"><br>
+                  ทอดมันซ่อนรูป<br>
+                  ทัตสึด้ง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ผัดวุ้นเส้นไข่เค็ม">ผัดวุ้นเส้นไข่เค็ม</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ผัดวุ้นเส้นไข่เค็ม"
+                    src="img/indiv/ผัดวุ้นเส้นไข่เค็ม.jpg" alt="ผัดวุ้นเส้นไข่เค็ม ใบไม้พระจันทร์"><br>
+                  วุ้นเส้นผัดแหนม<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="หอยลายผัดน้ำพริกเผา">หอยลายผัดน้ำพริกเผา</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="หอยลายผัดน้ำพริกเผา"
+                    src="img/indiv/หอยลายผัดน้ำพริกเผา.jpg" alt="หอยลายผัดน้ำพริกเผา ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="หมี่กะทิ">หมี่กะทิ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="หมี่กะทิ"
+                    src="img/indiv/หมี่กะทิ.jpg" alt="หมี่กะทิ ใบไม้พระจันทร์"><br>
+                  หมูจ๋า<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ห่อหมกทะเลมะพร้าวอ่อน">ห่อหมกทะเลมะพร้าวอ่อน</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ห่อหมกทะเลมะพร้าวอ่อน"
+                    src="img/indiv/ห่อหมกทะเลมะพร้าวอ่อน.jpg" alt="ห่อหมกทะเลมะพร้าวอ่อน ใบไม้พระจันทร์"><br>
+                  ผัดพริกขิงปลาทอด<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ผัดหมี่กระเฉด">ผัดหมี่กระเฉด</span>
+                  <img class="img-thumbnail"  data-toggle="modal" data-target="#indivDishModal" data-id="ผัดหมี่กระเฉด"
+                    src="img/indiv/ผัดหมี่กระเฉด.jpg" alt="ผัดหมี่กระเฉด"><br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <h3 align="center">รายการ 4</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  กุ้งผัดผงกะหรี่<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่กรอบมะนาว">ไก่กรอบมะนาว</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่กรอบมะนาว"
+                    src="img/indiv/ไก่กรอบมะนาว.jpg" alt="ไก่กรอบมะนาว ใบไม้พระจันทร์"><br>
+                  ไก่น้ำแดง<br>
+                  ไก่ผัดเกาลัด<br>
+                  ไก่ผัดขิง<br>
+                  ไก่ผัดเม็ดมะม่วงหิมพานต์<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่ทอดใบเตย">ไก่ทอดใบเตย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ไก่ทอดใบเตย"
+                    src="img/indiv/ไก่ทอดใบเตย.jpg" alt="ไก่ทอดใบเตย ใบไม้พระจันทร์"><br>
+                  ซี่โครงหมูอบน้ำผึ้ง<br>
+                  หมูผัดพริกไทยดำ
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead" align="left">
+                  เนื้อผัดน้ำมันหอย<br>
+                  ปลาห่อใบเตย<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ปลาผัดคื่นช่าย">ปลาผัดคื่นช่าย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ปลาผัดคื่นช่าย"
+                    src="img/indiv/ปลาผัดคื่นช่าย.jpg" alt="ปลาผัดคื่นช่าย ใบไม้พระจันทร์"><br>
+                  ปลาทอดผัดน้ำพริกไข่เค็ม<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เป็ดกีตาร์">เป็ดกีตาร์</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เป็ดกีตาร์"
+                    src="img/indiv/เป็ดกีตาร์.jpg" alt="เป็ดกีตาร์ ใบไม้พระจันทร์"><br>
+                  ผัดเปรี้ยวหวานรวมมิตร<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="มัจฉาเทวดา">มัจฉาเทวดา</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="มัจฉาเทวดา"
+                    src="img/indiv/มัจฉาเทวดา.jpg" alt="มัจฉาเทวดา ใบไม้พระจันทร์"><br>
+                  สลัดหมูเทอริยากิ<br>
+                  หมูผัดฮอยสินซอส
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 ml-auto">
+            <h3 align="center">รายการ 5</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กระทงทอง">กระทงทอง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กระทงทอง"
+                    src="img/indiv/กระทงทอง.jpg" alt="กระทงทอง ใบไม้พระจันทร์"><br>
+                  กระหล่ำปลีทอดน้ำปลา<br>
+                  ก๋วยเตี๋ยวลุยสวน<br>
+                  เกี๊ยวทอด<br>
+                  ไก่โรยงาทอด<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมปังหน้ากุ้ง">ขนมปังหน้ากุ้ง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมปังหน้ากุ้ง"
+                    src="img/indiv/ขนมปังหน้ากุ้ง.jpg" alt="ขนมปังหน้ากุ้ง ใบไม้พระจันทร์"><br>
+                  ขนมปังหน้าต้มยำกุ้ง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมปังหน้าหมู">ขนมปังหน้าหมู</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมปังหน้าหมู"
+                    src="img/indiv/ขนมปังหน้าหมู.jpg" alt="ขนมปังหน้าหมู ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวตังหน้าตั้ง">ข้าวตังหน้าตั้ง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวตังหน้าตั้ง"
+                    src="img/indiv/ข้าวตังหน้าตั้ง.jpg" alt="ข้าวตังหน้าตั้ง ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="คะน้าน้ำมันหอย">คะน้าน้ำมันหอย</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="คะน้าน้ำมันหอย"
+                    src="img/indiv/คะน้าน้ำมันหอย.jpg" alt="คะน้าน้ำมันหอย ใบไม้พระจันทร์"><br>
+                  ดอกกุ้ง<br>
+                  ถุงทอง
+                </p>
+                </div>
+                <div class="col">
+                <p class="lead" align="left">
+                  ปีกไก่ซีอิ้วทอด<br>
+                  ผัดผักสี่สหายน้ำแดง<br>
+                  ผัดผักโสภณ<br>
+                  ผัดมะระไฟแดง<br>
+                  ผัดคะน้าน้ำมันหอย<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เมี่ยงกลีบบัว">เมี่ยงกลีบบัว</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เมี่ยงกลีบบัว"
+                    src="img/indiv/เมี่ยงกลีบบัว.jpg" alt="เมี่ยงกลีบบัว ใบไม้พระจันทร์"><br>
+                  เมี่ยงคำ<br>
+                  ล่าเตียง<br>
+                  สลัดผลไม้กับกุ้ง<br>
+                  สลัด Hawaiian<br>
+                  หมูปั้นทอด<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="หมูอบยอดผัก">หมูอบยอดผัก</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="หมูอบยอดผัก"
+                    src="img/indiv/หมูอบยอดผัก.jpg" alt="หมูอบยอดผัก ใบไม้พระจันทร์"><br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <h3 align="center">รายการอาหารพิเศษ<br>(คำนวนราคาเพิ่มตามจำนวน)</h3>
+            <div class="row">
+              <div class="col">
+                <p class="lead" align="left">
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งทอดกระเทียม">กุ้งทอดกระเทียม</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งทอดกระเทียม"
+                    src="img/indiv/กุ้งทอดกระเทียม.jpg" alt="กุ้งทอดกระเทียม ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งราดพริก">กุ้งราดพริก</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งราดพริก"
+                    src="img/indiv/กุ้งราดพริก.jpg" alt="กุ้งราดพริก ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งอบวุ้นเส้น">กุ้งอบวุ้นเส้น</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งอบวุ้นเส้น"
+                    src="img/indiv/กุ้งอบวุ้นเส้น.jpg" alt="กุ้งอบวุ้นเส้น ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งผัดสะตอ">กุ้งผัดสะตอ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กุ้งผัดสะตอ"
+                    src="img/indiv/กุ้งผัดสะตอ.jpg" alt="กุ้งผัดสะตอ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเขียวหวานเนื้อ">แกงเขียวหวานเนื้อ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเขียวหวานเนื้อ"
+                    src="img/indiv/แกงเขียวหวานเนื้อ.jpg" alt="แกงเขียวหวานเนื้อ ใบไม้พระจันทร์"><br>
+                  แกงเผ็ดเป็ดย่าง<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเขียวหวานทะเล">แกงเขียวหวานทะเล</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงเขียวหวานทะเล"
+                    src="img/indiv/แกงเขียวหวานทะเล.jpg" alt="แกงเขียวหวานทะเล ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มยำกุ้ง">ต้มยำกุ้ง</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ต้มยำกุ้ง"
+                    src="img/indiv/ต้มยำกุ้ง.jpg" alt="ต้มยำกุ้ง ใบไม้พระจันทร์"><br>
+                  ปลาทอดน้ำปลา<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ยำปลาหมึกสอดไส้">ยำปลาหมึกสอดไส้</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ยำปลาหมึกสอดไส้"
+                    src="img/indiv/ยำปลาหมึกสอดไส้.jpg" alt="ยำปลาหมึกสอดไส้ ใบไม้พระจันทร์"><br>
+                </p>
+              </div>
+              <div class="col">
+                <p class="lead" align="left">
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ยำปลาทอดผลไม้">ยำปลาทอดผลไม้</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ยำปลาทอดผลไม้"
+                    src="img/indiv/ยำปลาทอดผลไม้.jpg" alt="ยำปลาทอดผลไม้ ใบไม้พระจันทร์"><br>
+                  ปลานึ่งมะนาว<br>
+                  ปลาลูกเขย<br>
+                  ปีกนางฟ้า<br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เป็ดอบยอดผัก">เป็ดอบยอดผัก</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เป็ดอบยอดผัก"
+                    src="img/indiv/เป็ดอบยอดผัก.jpg" alt="เป็ดอบยอดผัก ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="พายทะเล">พายทะเล</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="พายทะเล"
+                    src="img/indiv/พายทะเล.jpg" alt="พายทะเล ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ฮ่อยจ๊อ">ฮ่อยจ๊อ</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ฮ่อยจ๊อ"
+                    src="img/indiv/ฮ่อยจ๊อ.jpg" alt="ฮ่อยจ๊อ ใบไม้พระจันทร์"><br>
+                  <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แฮ่กึ๊น">แฮ่กึ๊น</span>
+                  <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แฮ่กึ๊น"
+                    src="img/indiv/แฮ่กึ๊น.jpg" alt="แฮ่กึ๊น ใบไม้พระจันทร์"><br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="desserts" class="content-section-a">
+      <div class="container">
+        <a target="_blank" href="documents/รายการอาหารจัดเลี้ยง_ใบไม้พระจันทร์.pdf"><p class="menulink">ดาวโหลดเมนู</p></a>
+        <div class="col-lg-12 ml-auto"  align="center">
+          <h2 class="section-heading">รายการของหวาน</h2>
+          <hr class="section-heading-spacer-c" style="width: 200px;">
+          <p class="lead">เลือกขนมหวานน้ำ 1 อย่าง หรือ ขนมฝรั่ง 1 อย่าง หรือ ขนมหวานแห้ง 2 อย่าง</p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-lg-7" align="center" style="margin: auto;">
+          <h3>ขนมน้ำ - ไทย (1 ชนิด)</h3>
+          <h4>เย็น</h4>
+          <div class="row">
+            <div class="col">
+              <p class="lead" align="left">
+                กระท้อนลอยแก้ว (ตามฤดูกาล)<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมสี่ถ้วย">ขนมสี่ถ้วย</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมสี่ถ้วย"
+                  src="img/indiv/ขนมสี่ถ้วย.jpg" alt="ขนมสี่ถ้วย ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แก้วชิงดวง">แก้วชิงดวง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แก้วชิงดวง"
+                  src="img/indiv/แก้วชิงดวง.jpg" alt="แก้วชิงดวง ใบไม้พระจันทร์"><br>
+                ซาหริ่ม<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ทับทิมกรอบรวมมิตร">ทับทิมกรอบรวมมิตร</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ทับทิมกรอบรวมมิตร"
+                  src="img/indiv/ทับทิมกรอบรวมมิตร.jpg" alt="ทับทิมกรอบรวมมิตร ใบไม้พระจันทร์"><br>
+              </p>
+            </div>
+            <div class="col">
+              <p class="lead" align="left">
+                ผลไม้ลอยแก้ว<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ลอดช่อง-แตงไทย">ลอดช่อง-แตงไทย</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ลอดช่อง-แตงไทย"
+                  src="img/indiv/ลอดช่อง-แตงไทย.jpg" alt="ลอดช่อง-แตงไทย ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ลูกตาลลอยแก้ว">ลูกตาลลอยแก้ว</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ลูกตาลลอยแก้ว"
+                  src="img/indiv/ลูกตาลลอยแก้ว.jpg" alt="ลูกตาลลอยแก้ว ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="สาคู-แคนตาลูป">สาคู-แคนตาลูป</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="สาคู-แคนตาลูป"
+                  src="img/indiv/สาคู-แคนตาลูป.jpg" alt="สาคู-แคนตาลูป ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นลิ้นจี่ลอยแก้ว">วุ้นลิ้นจี่ลอยแก้ว</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นลิ้นจี่ลอยแก้ว"
+                  src="img/indiv/วุ้นลิ้นจี่ลอยแก้ว.jpg" alt="วุ้นลิ้นจี่ลอยแก้ว ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="สาลิกาเล่นน้ำ">สาลิกาเล่นน้ำ</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="สาลิกาเล่นน้ำ"
+                  src="img/indiv/สาลิกาเล่นน้ำ.jpg" alt="สาลิกาเล่นน้ำ ใบไม้พระจันทร์"><br>
+              </p>
+            </div>
+          </div>
+          <h4>ร้อน</h4>
+          <div class="row">
+            <div class="col">
+              <p class="lead" align="left">
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กล้วยบวชชี">กล้วยบวชชี</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กล้วยบวชชี"
+                  src="img/indiv/กล้วยบวชชี.jpg" alt="กล้วยบวชชี ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ฟักทองแกงบวด">ฟักทองแกงบวด</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ฟักทองแกงบวด"
+                  src="img/indiv/ฟักทองแกงบวด.jpg" alt=ฟักทองแกงบวด" ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="แกงบวดรวมมิตร">แกงบวดรวมมิตร</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="แกงบวดรวมมิตร"
+                  src="img/indiv/แกงบวดรวมมิตร.jpg" alt="แกงบวดรวมมิตร ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมโคกะทิ">ขนมโคกะทิ</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมโคกะทิ"
+                  src="img/indiv/ขนมโคกะทิ.jpg" alt="ขนมโคกะทิ ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวดำเปียกเผือก">ข้าวเหนียวดำเปียกเผือก</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวดำเปียกเผือก"
+                  src="img/indiv/ข้าวเหนียวดำเปียกเผือก.jpg" alt="ข้าวเหนียวดำเปียกเผือก ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวถั่วดำ">ข้าวเหนียวถั่วดำ</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวถั่วดำ"
+                  src="img/indiv/ข้าวเหนียวถั่วดำ.jpg" alt="ข้าวเหนียวถั่วดำ ใบไม้พระจันทร์"><br>
+                ข้าวเหนียวเปียกข้าวโพด<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวเปียกลำใย">ข้าวเหนียวเปียกลำใย (ตามฤดูกาล)</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวเปียกลำใย"
+                  src="img/indiv/ข้าวเหนียวเปียกลำใย.jpg" alt="ข้าวเหนียวเปียกลำใย ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ดาวล้อมเดือน">ดาวล้อมเดือน</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ดาวล้อมเดือน"
+                  src="img/indiv/ดาวล้อมเดือน.jpg" alt="ดาวล้อมเดือน ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าทึงกะทิ">เต้าทึงกะทิ</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าทึงกะทิ"
+                  src="img/indiv/เต้าทึงกะทิ.jpg" alt="เต้าทึงกะทิ ใบไม้พระจันทร์"><br>
+                เต้าทึงน้ำลำใย<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าส่วน">เต้าส่วน</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าส่วน"
+                  src="img/indiv/เต้าส่วน.jpg" alt="เต้าส่วน ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าฮวยน้ำขิง">เต้าฮวยน้ำขิง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าฮวยน้ำขิง"
+                  src="img/indiv/เต้าฮวยน้ำขิง.jpg" alt="เต้าฮวยน้ำขิง ใบไม้พระจันทร์"><br>
+              </p>
+            </div>
+            <div class="col">
+              <p class="lead" align="left">
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าฮวยผลไม้สด">เต้าฮวยผลไม้สด</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เต้าฮวยผลไม้สด"
+                  src="img/indiv/เต้าฮวยผลไม้สด.jpg" alt="เต้าฮวยผลไม้สด ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยน้ำขิง">บัวลอยน้ำขิง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยน้ำขิง"
+                  src="img/indiv/บัวลอยน้ำขิง.jpg" alt="บัวลอยน้ำขิง ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยเผือก">บัวลอยเผือก</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยเผือก"
+                  src="img/indiv/บัวลอยเผือก.jpg" alt="บัวลอยเผือก ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยฟักทอง">บัวลอยฟักทอง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยฟักทอง"
+                  src="img/indiv/บัวลอยฟักทอง.jpg" alt="บัวลอยฟักทอง ใบไม้พระจันทร์"><br>
+                บัวลอยมะพร้าวอ่อน<br>
+                บัวลอยสาคู<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยสามสี">บัวลอยสามสี</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="บัวลอยสามสี"
+                  src="img/indiv/บัวลอยสามสี.jpg" alt="บัวลอยสามสี ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เปียกธัญพืช">เปียกธัญพืช</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เปียกธัญพืช"
+                  src="img/indiv/เปียกธัญพืช.jpg" alt="เปียกธัญพืช ใบไม้พระจันทร์"><br>
+                มันต้มน้ำขิง<br>
+                สามเกลอน้ำพุทราจีน<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="อินทนิล">อินทนิล (ไม่เกิน 100 ที่)</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="อินทนิล"
+                  src="img/indiv/อินทนิล.jpg" alt="อินทนิล ใบไม้พระจันทร์"><br>
+                แปะก๊วยมะพร้าวอ่อน<br>
+                ถ้วยร้อนมงคล
+              </p>
+            </div>
+          </div>
+          <p><b>หรือ</b></p>
+          <h3 align="center">ขนมแห้ง - ไทย (2 ชนิด)</h3>
+          <div class="row">
+            <div class="col">
+              <p class="lead" align="left">
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="กล้วยไข่เชื่อม">กล้วยไข่เชื่อม</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="กล้วยไข่เชื่อม"
+                  src="img/indiv/กล้วยไข่เชื่อม.jpg" alt="กล้วยไข่เชื่อม ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมกล้วย">ขนมกล้วย</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมกล้วย"
+                  src="img/indiv/ขนมกล้วย.jpg" alt="ขนมกล้วย ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมมัน">ขนมมัน</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมมัน"
+                  src="img/indiv/ขนมมัน.jpg" alt="ขนมมัน ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมเรไร">ขนมเรไร</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมเรไร"
+                  src="img/indiv/ขนมเรไร.jpg" alt="ขนมเรไร ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมเหนียว">ขนมเหนียว</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ขนมเหนียว"
+                  src="img/indiv/ขนมเหนียว.jpg" alt="ขนมเหนียว ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวหน้ากุ้ง">ข้าวเหนียวหน้ากุ้ง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวหน้ากุ้ง"
+                  src="img/indiv/ข้าวเหนียวหน้ากุ้ง.jpg" alt="ข้าวเหนียวหน้ากุ้ง ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวสังขยา">ข้าวเหนียวสังขยา</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ข้าวเหนียวสังขยา"
+                  src="img/indiv/ข้าวเหนียวสังขยา.jpg" alt="ข้าวเหนียวสังขยา ใบไม้พระจันทร์"><br>
+                ต้มขาว<br>
+                ตะโก้เผือก<br>
+              </p>
+            </div>
+            <div class="col" align="left">
+              <p class="lead">
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ตะโก้สาคู">ตะโก้สาคู</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ตะโก้สาคู"
+                  src="img/indiv/ตะโก้สาคู.jpg" alt="ตะโก้สาคู ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="ถั่วแปบ">ถั่วแปบ</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="ถั่วแปบ"
+                  src="img/indiv/ถั่วแปบ.jpg" alt="ถั่วแปบ ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เปียกปูนกะทิสด">เปียกปูนกะทิสด</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เปียกปูนกะทิสด"
+                  src="img/indiv/เปียกปูนกะทิสด.jpg" alt="เปียกปูนกะทิสด ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เล็บมือนาง">เล็บมือนาง</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เล็บมือนาง"
+                  src="img/indiv/เล็บมือนาง.jpg" alt="เล็บมือนาง ใบไม้พระจันทร์"><br>
+                วุ้นกาแฟ<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นตะไคร้ลอยแก้ว">วุ้นตะไคร้ลอยแก้ว</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นตะไคร้ลอยแก้ว"
+                  src="img/indiv/วุ้นตะไคร้ลอยแก้ว.jpg" alt="วุ้นตะไคร้ลอยแก้ว ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นลิ้นจี่">วุ้นลิ้นจี่</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="วุ้นลิ้นจี่"
+                  src="img/indiv/วุ้นลิ้นจี่.jpg" alt="วุ้นลิ้นจี่ ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="หยกมณี">หยกมณี</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="หยกมณี"
+                  src="img/indiv/หยกมณี.jpg" alt="หยกมณี ใบไม้พระจันทร์"><br>
+                ผลไม้ตามฤดูกาล<br>
+              </p>
+            </div>
+          </div>
+          <p><b>หรือ</b></p>
+          <h3>ขนมฝรั่ง (1 ชนิด)</h3>
+          <div class="row">
+            <div class="col">
+              <p class="lead" align="left">
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="คัสตาร์ด">คัสตาร์ด</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="คัสตาร์ด"
+                  src="img/indiv/คัสตาร์ด.jpg" alt="คัสตาร์ด ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เค้กกล้วยหอม">เค้กกล้วยหอม</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เค้กกล้วยหอม"
+                  src="img/indiv/เค้กกล้วยหอม.jpg" alt="เค้กกล้วยหอม ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="เค้กชอคโกแล็ตหน้านิ่ม">เค้กชอคโกแล็ตหน้านิ่ม</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="เค้กชอคโกแล็ตหน้านิ่ม"
+                  src="img/indiv/เค้กชอคโกแล็ตหน้านิ่ม.jpg" alt="เค้กชอคโกแล็ตหน้านิ่ม ใบไม้พระจันทร์"><br>
+              </p>
+            </div>
+            <div class="col">
+              <p class="lead" align="left">
+                เค้กชาไทย<br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="พายมะนาว">พายมะนาว</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="พายมะนาว"
+                  src="img/indiv/พายมะนาว.jpg" alt="พายมะนาว ใบไม้พระจันทร์"><br>
+                <span class="list-modal" data-toggle="modal" data-target="#indivDishModal" data-id="พายมะพร้าวอ่อน">พายมะพร้าวอ่อน</span>
+                <img class="img-thumbnail" data-toggle="modal" data-target="#indivDishModal" data-id="พายมะพร้าวอ่อน"
+                  src="img/indiv/พายมะพร้าวอ่อน.jpg" alt="พายมะพร้าวอ่อน ใบไม้พระจันทร์"><br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="alms" class="content-section-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 ml-auto" style="text-align: right">
+            <h2 class="section-heading">เลี้ยงพระ</h2>
+            <hr class="section-heading-spacer-r">
+            <div class="clearfix"></div>
+            <p class="lead">
+              รับเลี้ยงพระเป็น:<br>
+                &bull; วง (เริ่มต้นที่ 180 บาทต่อรูป)<br>
+                &bull; โตก (250 บาทต่อรูป)<br>
+                &bull; ชุดพระพุทธ (ไม่คิดเพิ่ม)<br>
+            </p>
+          </div>
+          <div class="col-lg-3 mr-auto">
+            <img class="img-fluid" src="img/ชุดพระพุทธ.jpg" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div id="left-float" class="col-lg-6 mr-auto order-lg-1">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#">หน้าหลัก</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#about">เกี่ยวกับเรา</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#catering-buffet">จัดเลี้ยง</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#mains">อาหารคาว</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#desserts">ของหวาน</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#restaurant">ร้านอาหาร</a>
+            </li>
+            <li class="footer-menu-divider list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#gallery">ดูรูป</a>
+            </li>
+          </ul>
+          <p class="copyright text-muted small">Copyright &copy; Baimaiprachan 2017. All Rights Reserved</p>
+        </div>
+
+
+        <div id="left-float" class="col-lg-6 mr-auto order-lg-2">
+          <div class="line-it-button"
+            style="display: inline; width: 72px; height: 28px;"
+            data-lang="en"
+            data-type="share-a"
+            data-url="https://baimaiprachan.github.io/">
+          </div>
+          <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+          <div class="box">
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FBaimaiPrachanVeniceWatcharaphol%2F&width=125&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId=119989415323780"
+              width="125"
+              height="46"
+              style="border:none;overflow:hidden"
+              scrolling="no"
+              frameborder="0"
+              allowTransparency="true">
+            </iframe>
+          </div>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-url="https://baimaiprachan.github.io/"
+          data-via="baimaiprachan"
+          data-show-count="false">
+          TweetNow</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.baimaiprachan.com/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
