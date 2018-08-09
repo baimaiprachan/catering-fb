@@ -4,6 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Athiti|Prompt" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
 
@@ -31,21 +32,47 @@
   th {
     border: 1px solid #6D4C3D;
     background-color: #D5E4AC;
+    text-align: center;
     }
   td {
     border: 1px solid #6D4C3D;
+    text-align: center;
   }
-  .btn {
+  .btn, a {
     border-radius: 10px;
     color: black;
     background-color: #D5E4AC;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
     }
   .btn:hover {
     background-color: #c2d786;
+    cursor: pointer;
   }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 810px;
+  }
+  .dropbtn:hover {
+    background-color: #c2d786;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 790px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .show {
+    display: block;
+  }
+
   </style>
 
 </head>
@@ -55,7 +82,8 @@
   <h1 style="text-align: center;">ใบไม้พระจันทร์</h1>
     <h2>จัดเลี้ยงบุฟเฟต์นอกสถานที่</h2>
     <hr class="section-heading-spacer-c">
-    <table style="width:100%">
+    <div align="center">
+      <table style="width: 98%;">
        <tr>
          <th colspan="2">รายการอาหาร</th>
          <th>Set 1<br>180 บ./ท่าน</th>
@@ -136,21 +164,31 @@
          <th>8 รายการ</th>
        </tr>
     </table>
+    </div>
     <br>
+
+    <!-- menu.pdf button -->
     <div align="center">
       <button class="btn">
         <a target="_blank" href="http://www.baimaiprachan.com/documents/รายการอาหารจัดเลี้ยง_ใบไม้พระจันทร์.pdf">
-          กดที่นี่เพื่อดาวโหลดเมนู
+          กดตรงนี้เพื่อดาวโหลดเมนู
         </a>
       </button>
     </div>
     <br>
+
+    <!-- main course -->
     <h2 class="section-heading">รายการแนะนำ - อาหารคาว</h2>
     <hr class="section-heading-spacer-c" style="width: 300px;">
     <p class="subtitle">รวมอาหารคาว 1 อย่างต่อรายการ จากทั้งหมด 5 รายการ</p>
 
-    <h3>รายการ 1</h3>
-    <div class="row">
+    <!-- main course - 1 -->
+  <div class="dropdown">
+    <h3 onclick="dropFn()" class="dropbtn">
+      รายการ 1 <i class="fa fa-angle-down"></i>
+    </h3>
+    <div id="main-course-1" class="dropdown-content">
+      <div class="row">
       <div class="col">
         <p class="lead">
           แกงเขียวหวานไก่<br>
@@ -185,7 +223,7 @@
         </p>
       </div>
     </div>
-    <div class="row">
+      <div class="row">
       <div class="col">
         <p class="lead">
           เกาเหลาหมูตุ๋น<br>
@@ -220,8 +258,38 @@
         </p>
       </div>
     </div>
-    <h3>รายการ 2</h3>
-    <div class="row">
+    </div>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function dropFn() {
+        document.getElementById("main-course-1").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+  <div class="dropdown">
+    <h3 onclick="dropFn2()" class="dropbtn">
+      รายการ 2 <i class="fa fa-angle-down"></i>
+    </h3>
+    <div id="main-course-2" class="dropdown-content">
+      <div class="row">
       <div class="col">
         <p class="lead">
           ยำไก่ย่าง<br>
@@ -266,6 +334,32 @@
         </p>
       </div>
     </div>
+    </div>
+  </div>
+
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function dropFn2() {
+        document.getElementById("main-course-2").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
     <h3>รายการ 3</h3>
     <div class="row">
       <div class="col">
